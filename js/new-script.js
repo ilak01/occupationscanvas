@@ -111,35 +111,35 @@ function drawAll(error, ageCSV, idCSV, occupations) {
 		nodeByName[d.name] = d;
 	});
 
-	// ////////////////////////////////////////////////////////////// 
-	// ///////////////// Create Bar Chart Data //////////////////////
-	// ////////////////////////////////////////////////////////////// 
+	////////////////////////////////////////////////////////////// 
+	///////////////// Create Bar Chart Data //////////////////////
+	////////////////////////////////////////////////////////////// 
 	
-	// //Turn the value into an actual numeric value
-	// ageCSV.forEach(function(d) { d.value = +d.value; });
+	//Turn the value into an actual numeric value
+	ageCSV.forEach(function(d) { d.value = +d.value; });
  
-	// //Create new dataset grouped by ID
-	// data = d3.nest()
-	// 	.key(function(d) { return d.ID; })
-	// 	.entries(ageCSV);
+	//Create new dataset grouped by ID
+	data = d3.nest()
+		.key(function(d) { return d.ID; })
+		.entries(ageCSV);
 		
-	// //Find the max value per ID - needed for the bar scale setting per mini bar chart
-	// dataMax = d3.nest()
-	// 	.key(function(d) { return d.ID; })
-	// 	.rollup(function(d) { return d3.max(d, function(g) {return g.value;}); })
-	// 	.entries(ageCSV);
+	//Find the max value per ID - needed for the bar scale setting per mini bar chart
+	dataMax = d3.nest()
+		.key(function(d) { return d.ID; })
+		.rollup(function(d) { return d3.max(d, function(g) {return g.value;}); })
+		.entries(ageCSV);
 
-	// //Array to keep track of which ID belongs to which index in the array
-	// var dataById = {};
-	// data.forEach(function (d, i) { 
-	// 	dataById[d.key] = i; 
-	// });	
+	//Array to keep track of which ID belongs to which index in the array
+	var dataById = {};
+	data.forEach(function (d, i) { 
+		dataById[d.key] = i; 
+	});	
 	
-	// var IDbyName = {};
-	// //Small file to get the IDs of the non leaf circles
-	// idCSV.forEach(function (d, i) { 
-	// 	IDbyName[d.name] = d.ID; 
-	// });	
+	var IDbyName = {};
+	//Small file to get the IDs of the non leaf circles
+	idCSV.forEach(function (d, i) { 
+		IDbyName[d.name] = d.ID; 
+	});	
 	
 	////////////////////////////////////////////////////////////// 
 	///////////////// Canvas draw function ///////////////////////
