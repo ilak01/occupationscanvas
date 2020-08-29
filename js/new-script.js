@@ -11,7 +11,7 @@ queue()
 	.await(drawAll);
 	
 //Initiates practically everything
-function drawAll(error, ageCSV, idCSV, occupations) {
+function drawAll(error, idCSV, occupations) {
 
 	////////////////////////////////////////////////////////////// 
 	////////////////// Create Set-up variables  ////////////////// 
