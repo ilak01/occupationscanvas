@@ -3,11 +3,6 @@ queue()
 	.defer(d3.csv, "data/ID of parent levels.csv")
 	.defer(d3.json, "data/occupation.json")
 	.defer(d3.csv, "data/2015.csv")
-	.defer(d3.csv, "data/2016.csv")
-	.defer(d3.csv, "data/2017.csv")
-	.defer(d3.csv, "data/2018.csv")
-	.defer(d3.csv, "data/2019.csv")
-	.defer(d3.csv, "data/2020.csv")
 	.await(drawAll);
 	
 //Initiates practically everything
@@ -106,9 +101,9 @@ function drawAll(error, ageCSV, idCSV, occupations) {
 		focus = root,
 		nodeCount = nodes.length;
 
-	var nodeByName = {};
+	var nodeByCountry = {};
 	nodes.forEach(function(d,i) {
-		nodeByName[d.name] = d;
+		nodeByCountry[d.Country] = d;
 	});
 
 	////////////////////////////////////////////////////////////// 
