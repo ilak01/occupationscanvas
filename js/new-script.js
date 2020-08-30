@@ -38,7 +38,7 @@ function drawAll(error, ageCSV, idCSV, occupations) {
 		centerY = height/2;
 
 	////////////////////////////////////////////////////////////// 
-	/////////////////////// Create SVG  /////////////////////// 
+	/////////////////////// Create SVG  //////////////////////////
 	////////////////////////////////////////////////////////////// 
 	
 	//Create the visible canvas and context
@@ -70,8 +70,8 @@ function drawAll(error, ageCSV, idCSV, occupations) {
 		bodyFont = "Merriweather Sans";
 	
 	var colorCircle = d3.scale.ordinal()
-			.domain([0,1,2,3])
-			.range(['#bfbfbf','#838383','#4c4c4c','#1c1c1c']);
+			.domain(["Country","Region"])
+			.range(['#bfbfbf','#838383']); //,'#4c4c4c','#1c1c1c'
 			
 	var colorBar = d3.scale.ordinal()
 		.domain(["16 to 19","20 to 24","25 to 34","35 to 44","45 to 54","55 to 64","65+"])
