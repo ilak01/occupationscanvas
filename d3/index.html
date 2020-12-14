@@ -10,7 +10,7 @@
         <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
     
         <!-- Create an element where the map will take place -->
-        <svg id="my_dataviz" width="4000" height="3000"></svg>
+        <svg id="my_dataviz" width="1000" height="750"></svg>
     </body>
 
     <script>
@@ -25,7 +25,7 @@
         var projection = d3.geoMercator()
           .scale(70)
           .center([0,20])
-          .translate([width / 2, height / 2]);
+          .translate([width / 1, height / 1]);
         
         // Data and color scale
         var data = d3.map();
